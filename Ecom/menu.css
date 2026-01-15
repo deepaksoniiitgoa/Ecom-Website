@@ -1,0 +1,107 @@
+body{
+    background-color: #A6E3E9;
+}
+.hello{
+    font-size: 40px;
+    font-family: cursive;
+}
+.profileicon{  
+    width: 100px;
+    float: right;
+    margin-top: 0%;
+}
+.top{
+    font-size: 40px;
+    margin-left: 43%;
+}
+
+.a,.b,.c{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20%; 
+    margin-right: 20%; 
+}
+
+.aleftimage,.arightimage,.bleftimage,.brightimage,.cli{
+    width: 50px;
+    float: left;
+}
+
+.aleftbutton,.arightbutton,.bleftbutton,.brightbutton,.clb{
+    height: 100px;
+    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+    width: 280px;
+    background-color: white;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+.aleftbutton:hover,.arightbutton:hover,.bleftbutton:hover,.brightbutton:hover,.clb:hover{
+    background-color: gray;
+    transition: 2s;
+}
+
+.aleft,.aright,.bleft,.bright,.cl{
+    margin: 10%;
+}
+
+.logoutimage{
+    width: 50px;
+}
+.logout{
+    font-size: 30px;
+    
+}
+
+.homeimage,.cartimage,.menuimage{
+    width: 60px;
+    
+}
+.scroller{
+    position: sticky;
+    bottom: 0%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #CBF1F5;
+    border: 0.1cm solid #CBF1F5;
+    border-radius: 100px;
+    width: 1000px;
+    margin-left: 17%;
+}
+
+.bottomcart,.bottomhome{
+    background-color: #CBF1F5;
+    border: 0.15cm solid #71C9CE;
+    border-radius: 20px;
+    margin: 0%;
+    
+    width: 150px;
+    font-size: 40px;
+    
+}
+
+.bottomcart:hover{
+    background-color: #71C9CE;
+    
+}
+
+.bottommenu{
+    background-color: #CBF1F5;
+    border: 0.15cm dashed #71C9CE ;
+    
+    margin: 0%;
+    
+    width: 150px;
+    font-size: 40px;
+    border-radius: 20px;
+
+}
+
+.bottomhome:hover{
+    background-color: #71C9CE;
+
+}
+

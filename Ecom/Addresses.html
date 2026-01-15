@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address</title>
+    <link rel="stylesheet" href="Address.css">
+ 
+</head>
+<body>
+    <form>
+    <div class="container">
+        <div class="header">
+            <h1><span id="name1"></span></h1>
+        </div>
+        <div class="details">
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info">
+                        <span class="label">Street:</span>
+                        <span class="value" id="name">Sample</span>
+                    </div>
+                    <div id="name-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info">
+                        <span class="label">Landmark:</span>
+                        <span class="value" id ="email">Farmagudi Circle</span>
+                    </div>
+                    <div id="email-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+           
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info">
+                        <span class="label">City,State:</span>
+                        <address class="value" id="shippingaddress">123 IIT Goa , Goa, India</address>
+                    </div>
+                    <div  id="address-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="info">
+                        <span class="label">Mobile:</span>
+                        <span class="value" id="mobileno">1234567890</span>
+                    </div>
+                    <div id="mobile-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1><span id="name2"></span></h1>
+        </div>
+        <div class="details">
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info">
+                        <span class="label">Street:</span>
+                        <span class="value" id="name">Sample</span>
+                    </div>
+                    <div id="name-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info">
+                        <span class="label">Landmark:</span>
+                        <span class="value" id ="email">Farmagudi Circle</span>
+                    </div>
+                    <div id="email-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+           
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info">
+                        <span class="label">City,State:</span>
+                        <address class="value" id="shippingaddress">123 IIT Goa , Goa, India</address>
+                    </div>
+                    <div  id="address-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="info">
+                        <span class="label">Mobile:</span>
+                        <span class="value" id="mobileno">1234567890</span>
+                    </div>
+                    <div id="mobile-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+            <button type="submit" id="end-editing" onclick="location.href='menu.html'"><a href="menu.html">Done</a></button>
+        </div>
+    </div>
+    </form>
+<script type="text/javascript">
+    name = JSON.parse(localStorage.getItem('actualname'));
+   
+    document.getElementById('name1').innerText = name;
+    document.getElementById('name2').innerText = name;
+
+        
+function enableEditing(detailId) {
+    var detail = document.getElementById(detailId);
+    detail.setAttribute('contenteditable', 'true');
+    detail.focus();
+  }
+  
+  function disableEditing(detailId) {
+    var detail = document.getElementById(detailId);
+    detail.setAttribute('contenteditable', 'false');
+  }
+  
+  
+  document.getElementById('name-edit').addEventListener('click', function() {
+    enableEditing('name');
+  });
+  
+  document.getElementById('email-edit').addEventListener('click', function() {
+    enableEditing('email');
+  });
+  
+  document.getElementById('mobile-edit').addEventListener('click', function() {
+    enableEditing('mobileno');
+  });
+  
+  document.getElementById('address-edit').addEventListener('click', function() {
+    enableEditing('shippingaddress');
+  });
+  
+  // Event listener for the 'Done' button
+  document.getElementById('end-editing').addEventListener('click', function() {
+    disableEditing('name');
+    disableEditing('email');
+    disableEditing('mobileno');
+    disableEditing('shippingaddress');
+    name = document.getElementById('name').innerText;
+    localStorage.removeItem('actualname');
+    localStorage.setItem('actualname',JSON.stringify(name));
+    
+    email = document.getElementById('email').innerText;
+    localStorage.removeItem('actualemail');
+    localStorage.setItem('actualemail',JSON.stringify(email));
+  
+  });
+    
+</script>
+</body>
+</html>

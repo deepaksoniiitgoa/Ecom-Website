@@ -1,0 +1,41 @@
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+.content .image{
+    width: 60%;
+    height: 100%;
+    float: left;
+
+}
+.content .buy{
+    width: 20%;
+    height: auto;
+    float: right;
+}
+.footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.btn {
+    padding: 20px 45px;
+    background-color:#F08A5D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 30px;
+    width: 60px;
+    font-size:30px;
+}
+.content .back-icon img{
+    width: 50px;
+}
+.content .wishlist img{
+    width: 50px;
+    padding-right: 10px;
+}

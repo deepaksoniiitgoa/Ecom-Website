@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+   <form>
+    <div class="content">
+        <h1>Create Account</h1>
+        <h2>Create account to save your journey!</h2>
+        <div class="input">
+            <input type="text" placeholder="  Full Name"  id="name">
+        </div>
+        <div class="input">
+            <input type="email" placeholder="  Email"  id="email">
+        </div>
+        <div class="input">
+            <input type="text" placeholder="  Mobile Number"  id="number">
+        </div>
+        <div class="input">
+            <input type="password" placeholder="  Password" >
+        </div>
+        <div class="button">
+            <button type="submit" class="button" onclick="store()">Create account</a></button>
+        </div>
+        <div class="already">
+            <p>Already have an account?<a href="loginpage.html">Login</a></p>
+        </div>
+    </div>
+    </form>
+    <script type="text/javascript">
+       function store(){ 
+        let name = document.getElementById('name').value;
+        localStorage.setItem('actualname',JSON.stringify(name));
+
+        let email = document.getElementById('email').value;
+        localStorage.setItem('actualemail',JSON.stringify(email));
+
+        let number= document.getElementById('number').value;
+        localStorage.setItem('actualnumber',JSON.stringify(number));
+        window.open('2nd-page.html','_blank')
+       }
+    </script>
+</body>
+</html>

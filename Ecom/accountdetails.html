@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account Details</title>
+    <link rel="stylesheet" href="styles.css">
+ 
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>User Account Details</h1>
+        </div>
+        <div class="details">
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-user"></i></div>
+                    <div class="info">
+                        <span class="label">Name:</span>
+                        <span class="value" id="name">Sample</span>
+                    </div>
+                    <div id="name-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <div class="info">
+                        <span class="label">Email:</span>
+                        <span class="value" id ="email">abc@example.com</span>
+                    </div>
+                    <div id="email-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="info">
+                        <span class="label">Mobile Number:</span>
+                        <span class="value" id="mobileno">1234567890</span>
+                    </div>
+                    <div id="mobile-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+            <div class="detail-container">
+                <div class="detail">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info">
+                        <span class="label">Shipping Address:</span>
+                        <span class="value" id="shippingaddress">123 IIT Goa , Farmagudi, India</span>
+                    </div>
+                    <div  id="address-edit" class="edit-icon"><i class="fas fa-edit"></i></div>
+                </div>
+            </div>
+            <button type="submit" id="end-editing" onclick="location.href='menu.html';">Done</button>
+        </div>
+    </div>
+<script>
+    
+function enableEditing(detailId) {
+  var detail = document.getElementById(detailId);
+  detail.setAttribute('contenteditable', 'true');
+  detail.focus();
+}
+
+function disableEditing(detailId) {
+  var detail = document.getElementById(detailId);
+  detail.setAttribute('contenteditable', 'false');
+}
+
+
+document.getElementById('name-edit').addEventListener('click', function() {
+  enableEditing('name');
+});
+
+document.getElementById('email-edit').addEventListener('click', function() {
+  enableEditing('email');
+});
+
+document.getElementById('mobile-edit').addEventListener('click', function() {
+  enableEditing('mobileno');
+});
+
+document.getElementById('address-edit').addEventListener('click', function() {
+  enableEditing('shippingaddress');
+});
+
+// Event listener for the 'Done' button
+document.getElementById('end-editing').addEventListener('click', function() {
+  disableEditing('name');
+  disableEditing('email');
+  disableEditing('mobileno');
+  disableEditing('shippingaddress');
+  name = document.getElementById('name').innerText;
+  localStorage.removeItem('actualname');
+  localStorage.setItem('actualname',JSON.stringify(name));
+  
+  email = document.getElementById('email').innerText;
+  localStorage.removeItem('actualemail');
+  localStorage.setItem('actualemail',JSON.stringify(email));
+
+});
+    name = JSON.parse(localStorage.getItem('actualname'));
+    document.getElementById('name').innerHTML=name;
+
+    email = JSON.parse(localStorage.getItem('actualemail'));
+    document.getElementById('email').innerHTML=email;
+
+    number = JSON.parse(localStorage.getItem('actualnumber'));
+    document.getElementById('mobileno').innerHTML=number;
+
+    address = JSON.parse(localStorage.getItem('actualaddress'));
+    document.getElementById('shippingaddress').innerHTML=address;
+</script>
+</body>
+</html>

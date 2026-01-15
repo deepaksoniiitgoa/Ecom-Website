@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Address</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <form>
+        <h2>DELIVERY ADDRESS</h2>
+        <div class="inputs">
+        <input type="text" id="name" name="name" placeholder="Enter Name">
+        <input type="text" id="mobile-no" name="mobile-no" placeholder="Enter Mobile Number"><br>
+        <input type="text" id="pincode" name="pinode" placeholder="Enter Pincode">
+        <input type="text" id="locality" name="locality" placeholder="Enter Locality"><br>
+        <input type="text" id="address" name="address" placeholder="Enter Address(Area and Street)"><br>
+        <input type="text" id="city" name="city" placeholder="Enter City/District/Town">
+        <input type="text" id="state" name="state" placeholder="Enter State"><br>
+        <input type="text" id="optional" name="optional" placeholder="Alternate Mobile Number(optional)"><br>
+        <button id="save" onclick="alert('Your Address has been Saved'); return false;">Save And Deliver Here</button>
+        </div>
+        <div class="price-details">
+            <h3>Price Details</h3>
+            <pre>Price                  Rs-65,248</pre>
+            <pre>Delivery Charges       Rs-310</pre>
+            <pre><b>Total Payable</b>          <b id="payable">Rs-65,558</b></pre>
+        </div>
+    
+    
+        <h2>PAYMENT OPTION</h2>
+        <div class="payment-option">
+            <input type="text" id="cardnum" name="cardnum" placeholder="Card Number"><br>
+            <input type="text" id="cardhol" name="cardhol" placeholder="Card Holder">
+        </div>
+    
+        <button id="po" onclick="myFunction()">Place Order</button>
+    </form>
+
+
+    <script>
+        const name = JSON.parse(localStorage.getItem('actualname'));
+        const number = JSON.parse(localStorage.getItem('actualnumber'));
+        const address = JSON.parse(localStorage.getItem('actualaddress'))
+        const cardnumber = JSON.parse(localStorage.getItem('cardnumber'));
+        const cardholder = JSON.parse(localStorage.getItem('cardholder'));
+
+         document.getElementById("name").value=name
+         document.getElementById("mobile-no").value=number
+         document.getElementById("address").value=address
+         document.getElementById("cardnum").value=cardnumber
+         document.getElementById("cardhol").value=cardholder
+
+        
+
+        function myFunction(){
+            if(confirm("Are You Sure To Place The Order?") == true) {
+                alert("Your Order Has Been Confirmed!")
+                window.open('home.html','_blank')
+            }
+        }
+        document.getElementById('payable').innerHTML = JSON.parse('payable')
+    </script>
+
+</body>
+</html>

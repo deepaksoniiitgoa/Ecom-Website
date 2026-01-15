@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="productpage.css">
+</head>
+<body>
+    <div class="content" style="width: 100%;">
+        <div class="back-icon" onclick="location.href='home.html';">
+            <img src="https://cdn.icon-icons.com/icons2/903/PNG/512/back_icon-icons.com_69560.png" alt="Back Icon">
+          </div>
+        <div class="image">
+            <a href=""><img src="https://m.media-amazon.com/images/I/619lW2YtVhL._SX679_.jpg" alt=""></a>
+        
+        </div>
+        <div class="wishlist" onclick="wish()">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIkVbwMONUkipcOe_O-QSfVtyzqw677RYcw&usqp=CAU" alt="">
+        </div>
+        <div class="info">
+            <div class="name"><p><h1>iQOO 12 5G (Legend, 12GB RAM, 256GB Storage) | India's 1st Snapdragon® 8 Gen 3 Mobile Platform | India's only Flagship with 50MP + 50MP + 64MP Camera</h1></p></div>
+            <div class="price">
+                <button style="background-color: red;border-radius: 15px;width: 20%;color: white;padding: 10px;font-size: 16px;">Limited time deal</button>
+                <p><h1>Rs.59,999</h1></p></div>
+            <div class="aboutitem"> <h2>About this item</h2>
+                <ul>
+                <li>3.3 GHz Snapdragon 8 Gen 3 mobile platform, which is on 4nm TSMC Process. Enhanced graphic performance with Adreno 750. In addition to that, it has LPDRR5X RAM & UFS 4.0 storage.</li>
+                <li>50MP 1/1.3" Astrography Camera (f/1.68) + 50MP Ultra - Wide Angle Camera (f/1.20) + 64MP 3X Periscope Telephoto Camera (f/2.57) with 100X Digital zoom.</li>
+                <li>Brightest Display ever with 6.78" 144 Hz LTPO AMOLED display with 3000 nit peak brightness. SGS-certified for low blue light. 2160Hz PWM uses the persistence of human vision to control display brightness.</li>
+                <li>Supercomputing chip Q1, Symmetrical dual stereo speaker, 4D Game vibration, Large X-axis linear motor enhances the overall gaming experience.</li>
+                <li>Fully charged battery with 120W fast charger. IP64 rating provides ingress protection against dust/water under normal use. Funtouch OS 14 based on Android 14</li>
+                </ul></div>
+        </div>
+    <div class="footer">
+        <a href="checkout.html" class="btn">Buy Now</a>
+        <a href="#" class="btn" onclick="add()">Add to Cart</a>
+    </div>
+      
+        </div>
+    </div>
+    <script>
+        function wish(){
+            alert("Item has been added to Wishlist");
+        }
+        function add(){
+            alert("Item has been added to Cart");
+            localStorage.setItem('a',JSON.stringify('1'))
+        }
+    </script>
+</body>
+</html>

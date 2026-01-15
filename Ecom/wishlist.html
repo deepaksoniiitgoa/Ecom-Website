@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="wishlist.css">
+
+</head>
+
+<body>
+    <div id="w">
+      <header id="title">
+        <h1>Wishlist</h1>
+      </header>
+      <div id="page">
+        <table id="cart">
+          <thead>
+            <tr>
+              <th class="first">Photo</th>
+              <th class="second">Qty</th>
+              <th class="third">Product</th>
+              <th class="fourth">Price</th>
+              <th class="fifth">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- shopping cart contents -->
+            <tr class="productitm" id="item">
+            
+              <td><img src="https://rukminim2.flixcart.com/image/416/416/xif0q/office-study-table/l/1/g/45-plywood-engineered-wood-engineered-wood-multipurpose-table-original-imagybzs5g4qd6dh.jpeg?q=70&crop=false" class="thumb"></td>
+              <td><input type="number" value="1" min="0" max="99" class="qtyinput"></td>
+              <td>Lukzer Engineered Wood Computer Desk Study Table</td>
+              <td>Rs.5,249</td>
+              <td><button id="Addtocartbutton" onclick="add()">Add to cart</button></td>
+            </tr>
+            <!-- <tr class="productitm">
+             
+              <td><img src="https://www.engineeringoutfitters.com/cdn/shop/products/DynamicImageHandler_31d0271d-52f9-4668-b50d-142590414e1c.png?v=1500754118&width=1445" class="thumb"></td>
+              <td><input type="number" value="1" min="0" max="99" class="qtyinput"></td>
+              <td>Black tshirt for men</td>
+              <td>Rs. 689</td>
+              <td><button id="Addtocartbutton" onclick="add()">Add to cart</button></td>
+            </tr>
+            <tr class="productitm">
+             
+              <td><img src="https://in.elevarsports.com/cdn/shop/products/Elevar_Sports_Men_Flybolt_High_Voltage_Side_Angle_large.png?v=1701676087" class="thumb"></td>
+              <td><input type="number" value="1" min="0" max="99" class="qtyinput"></td>
+              <td>Shopsmart Basics Shoes for Men</td>
+              <td>Rs. 2,568</td>
+              <td><button id="Addtocartbutton" onclick="add()">Add to cart</button></td>
+            </tr>
+            <tr class="productitm">
+              
+              <td><img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-naturaltitanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1692893982071" class="thumb"></td>
+              <td><input type="number" value="1" min="0" max="99" class="qtyinput"></td>
+              <td>Apple Iphone 15 Pro Max</td>
+              <td>Rs. 1,62,000</td>
+              <td><button id="Addtocartbutton" onclick="add()">Add to cart</button></td>
+            </tr> -->
+            
+        
+            
+            
+            <!-- checkout btn -->
+            <tr class="continueshoppingrow">
+              <td colspan="5" class="continueshopping"><button id="submitbtn" onclick="location.href='home.html';">Continue to Shopping</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+        function add(){
+             alert("Item has been added to Cart");
+             localStorage.setItem('c',JSON.stringify('1'))
+        }
+        let b = JSON.parse(localStorage.getItem('b'));
+        if (b == '1'){
+          document.getElementById('item').style.display = 'table-row';
+        }
+    </script>
+  </body>
+
+</html>

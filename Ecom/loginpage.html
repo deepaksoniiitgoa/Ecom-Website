@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form>
+    <div class="content">
+      <h1>Login</h1>
+      <div class="input" id="email">
+          <input type="text" placeholder=" Username/Email" required id="Email">
+      </div>
+      <div class="input">
+        <input type="password" placeholder=" Password" required id="Password">
+      </div>
+      <div class="remember">
+        <input type="checkbox"><p>Remember me <br></p>
+      </div>
+      <div class="forgot">
+      <a href="">Forgot password?</a>
+      </div>
+      <div class="button">
+      <button id="submit" type="submit" class="button" onclick="check()">Login</button>
+      </div>
+      <div class="Dont">
+        <p>Don't have an account?<a href="signup.html">Sign Up</a></p>
+      </div>
+    </div>
+  </form>
+    <script type="text/javascript">
+      let data = {};
+      let name = {};
+      let number = {};
+      let address = {};
+      function check(){
+        data['yash@gmail.com'] = 'yash@123';
+        data['vivek@gmail.com'] = 'vivek@123';
+        name['yash@gmail.com'] = 'Yash'
+        name['vivek@gmail.com'] = 'Vivek'
+        number['yash@gmail.com'] = '+91 9834675297'
+        number['vivek@gmail.com'] = '+91 7783457294'
+        address['yash@gmail.com'] = 'B3-117, IIT GOA HOSTEL'
+        address['vivek@gmail.com'] = 'B3-116 IIT GOA HOSTEL'
+
+        localStorage.setItem('data',JSON.stringify(data));
+        localStorage.setItem('name',JSON.stringify(name));
+        localStorage.setItem('number',JSON.stringify(number));
+        localStorage.setItem('address',JSON.stringify(address));
+
+        const email = document.getElementById("Email").value;
+        const password = document.getElementById("Password").value;
+
+        if (email in data == false){
+          alert("Invaild UserName/Email");
+        }
+        else{
+          if (data[email] == password){
+            window.open("2nd-page.html", "_blank");
+            localStorage.setItem('actualemail',JSON.stringify(email));
+            localStorage.setItem('actualname',JSON.stringify(name[email]));
+            localStorage.setItem('actualnumber',JSON.stringify(number[email]));
+            localStorage.setItem('actualaddress',JSON.stringify(address[email]));
+
+          }
+          else{
+            alert("Invaild Password");
+          }
+        }
+      }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="furniture.css">
+</head>
+<body>
+    <div class="content" style="width: 100%;">
+        <div class="back-icon" onclick="location.href='home.html';">
+            <img src="https://cdn.icon-icons.com/icons2/903/PNG/512/back_icon-icons.com_69560.png" alt="Back Icon">
+          </div>
+        <div class="image">
+        <img src="https://rukminim2.flixcart.com/image/416/416/xif0q/office-study-table/l/1/g/45-plywood-engineered-wood-engineered-wood-multipurpose-table-original-imagybzs5g4qd6dh.jpeg?q=70&crop=false"id="dimage">
+        <a href=""><img src="" alt=""></a>
+        
+        </div>
+        <div class="wishlist" onclick="wish()">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIkVbwMONUkipcOe_O-QSfVtyzqw677RYcw&usqp=CAU" alt="">
+        </div>
+        <div class="info">
+            <div class="name"><p><h1>Lukzer Engineered Wood Computer Desk Study Table-(169X90X45cm) Engineered Wood Multipurpose Table</h1></p></div>
+            <div class="price">
+                <button style="background-color: red;border-radius: 15px;width: 20%;color: white;padding: 10px;font-size: 16px;">Limited time deal</button>
+                <p><h1>Rs.5,249</h1></p></div>
+            <div class="aboutitem"> <h2>About this item</h2>
+                <ul>
+                <li>Modish Style Computer Desk: The wood desk with spacious desktop keeps everything within reach to ensure comfortable working experience</li>
+                <li>Spacious Workstation: The desk shelves are perfect for storing your favourite books while its top hutch can be used to display home decor items like potted plants and artworks.</li>
+                <li>Fit Your Home Office Desk: This modern computer table can fit for any home, office dorm, school and workspace</li>
+                <li>High-Quality Materials & Durable: With the design of a rustic veneer finish and solid wood, this study desk not only shows an attractive look but also features superior durability and stability.</li>
+                <li>Easy to Assemble: The computer desk includes the installation manual, parts and installation tools, which can be assembled quickly and easily.</li>
+                </ul></div>
+        </div>
+    <div class="footer">
+        <a href="checkout.html" class="btn">Buy Now</a>
+        <a href="#" class="btn" onclick="add()">Add to Cart</a>
+    </div>
+      
+        </div>
+    </div>
+    <script>
+        function wish(){
+            alert("Item has been added to Wishlist");
+            localStorage.setItem('b',JSON.stringify('1'))
+        }
+        function add(){
+            alert("Item has been added to Cart");
+        }
+    </script>
+</body>
+</html>

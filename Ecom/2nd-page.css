@@ -1,0 +1,46 @@
+h1{
+  color: rgb(255, 0, 0);
+  text-align: center;
+  margin-top: 5%;
+  font-size: 50px;
+}
+h2{
+  color: rgb(14, 10, 10);
+  text-align: center;
+  margin-top: 10%;
+  font-size: 40px;
+  text-decoration: underline #7169ce solid 4px;
+}
+#button1{
+  border-radius: 100px;
+  height: 200px;
+  width: 200px;
+  margin-left: 35%;
+  margin-top: 0.1%;
+  padding: 1%;
+  background-color: rgb(182, 177, 177);
+  font-size: 60px;
+  cursor: pointer;
+}
+#button2{
+  border-radius: 100px;
+  height: 200px;
+  width: 200px;
+  margin-left: 10%;
+  padding: 1%;
+  background-color: rgb(182, 177, 177);
+  font-size: 60px;
+  cursor: pointer;
+}
+body{
+  background-image: url(images/backgroung-img-for-2ndpage.png);
+  background-size: 100%;
+}
+#button1:hover{
+  background-color: rgb(36, 209, 44);
+  color: white;
+}
+#button2:hover{
+  background-color: rgb(248, 0, 0);
+  color: white;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link rel="stylesheet" href="cartsyle.css">
+
+</head>
+
+<body>
+    <div id="w">
+      <header id="title">
+        <h1>My Cart</h1>
+      </header>
+      <div id="page">
+        <table id="cart">
+          <thead>
+            <tr>
+              <th class="first">Photo</th>
+              <th class="second">Qty</th>
+              <th class="third">Product</th>
+              <th class="fourth">Amount</th>
+              <th class="fifth">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- shopping cart contents -->
+            <tr class="productitm" id="item1" >
+              <td><img src="https://m.media-amazon.com/images/I/619lW2YtVhL._SX679_.jpg" class="thumb"></td>
+              <td><input type="number" value="1" min="1" max="99" class="qtyinput" ></td>
+              <td>iQOO 12 5G (Legend, 12GB RAM, 256GB Storage) | India's 1st Snapdragon® 8 Gen 3 Mobile Platform </td>
+              <td>Rs.59,999</td>
+              <td><span class="remove"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs8UPTRv871x0boUgzhwucpX8YkqhCjwOdIQ&usqp=CAU" alt="X" onclick="clear1()"></span></td>
+            </tr>
+            <tr class="productitm" id ="item2" >
+              <td><img src="https://rukminim2.flixcart.com/image/416/416/xif0q/office-study-table/l/1/g/45-plywood-engineered-wood-engineered-wood-multipurpose-table-original-imagybzs5g4qd6dh.jpeg?q=70&crop=false" class="thumb"></td>
+              <td><input type="number" value="1" min="1" max="99" class="qtyinput" ></td>
+              <td>Lukzer Engineered Wood Computer Desk Study Table</td>
+              <td >Rs.5,249</td>
+              <td><span class="remove"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs8UPTRv871x0boUgzhwucpX8YkqhCjwOdIQ&usqp=CAU" alt="X" onclick="clear2()"></span></td>
+            </tr>
+
+            <tr class="extracosts">
+              <td class="light">Shipping Charges</td>
+              <td colspan="2" class="light"></td>
+              <td id="ship">Rs. 310</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr class="totalprice">
+              <td class="light">Total:</td>
+              <td colspan="2">&nbsp;</td>
+              <td colspan="2" ><span class="thick" id="total">Rs. 65,558</span></td>
+            </tr>
+            
+            <!-- checkout btn -->
+            <tr class="checkoutrow">
+              <td colspan="5" class="checkout"><button id="submitbtn" onclick="location.href='checkout.html';">Checkout Now!</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="scroller">
+      <button class="bottomhome" onclick="location.href='home.html';">
+          
+              <img src="images/homeicon.png" class="homeimage">
+              Home
+      
+      </button>
+      <button class="bottomcart">
+          
+              <img src="images/carticon.png" class="cartimage">
+              Cart
+          
+      </button>
+      <button class="bottommenu" onclick="location.href='menu.html';">
+          
+              <img src="images/menuicon.png" class="menuimage">
+              Menu
+      
+      </button>    
+  </p>
+    <script>
+        function clear1(){
+            document.getElementById("item1").innerHTML = ""
+            localStorage.removeItem('a')
+            document.getElementById('item1').style.display = 'none';
+            window.location.reload();
+        }
+        function clear2(){
+            document.getElementById("item2").innerHTML = ""
+            localStorage.removeItem('c')
+            document.getElementById('item1').style.display = 'none';
+            window.location.reload();
+        }
+        
+        let a = JSON.parse(localStorage.getItem('a'));
+        let c = JSON.parse(localStorage.getItem('c'));
+        if (a == '1'){
+          document.getElementById('item1').style.display = 'table-row';
+        }
+        if (c == '1'){
+          document.getElementById('item2').style.display = 'table-row';
+        }
+        
+        if (a == '1' && c == '1'){
+          document.getElementById('total').innerText = 'Rs. 65,558' 
+          let payable = 'Rs. 65,558'
+        }
+        if (c == '1' && a != '1' ){
+          document.getElementById('total').innerText = 'Rs. 5,559'
+          let payable = 'Rs. 5,559'
+        }
+        if (c != '1' && a == '1' ){
+          document.getElementById('total').innerText = 'Rs. 60,309'
+          let payable = 'Rs. 60,309'
+        }
+        if(a != '1' && c != '1'){
+            document.getElementById('total').innerText = 'Rs. 0'
+            document.getElementById('ship').innerText = 'Rs. 0'
+            let payable = 'Rs. 0'
+        }
+        localStorage.setItem('payable',JSON.stringify(payable))
+
+    </script>
+  </body>
+
+</html>
